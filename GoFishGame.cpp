@@ -20,6 +20,7 @@ bool ValidMenu(string i);
 void MenuLines();
 
 void GoFishGame::start(){
+    currentPlayerIndex = 0;
     MenuLines();
     string a = Menuchoice();
     //change mode to Human vs Computer
@@ -69,3 +70,35 @@ bool ValidMenu(string i){
 void MenuLines(){
     cout << "-----------------------------------------------------------------------" << endl;
 }
+
+
+void GoFishGame::playerTurn() {
+    cout << "Player " << currentPlayerIndex + 1 << "'s turn." << endl;
+    processPlayerMove(currentPlayer, otherPlayer);
+    if (currentPlayer.getHandSize() == 0) {
+        gameOver = true;
+        // Determine the winner
+        // Update statistics
+        cout << "Player " << currentPlayerIndex + 1 << " has no cards left. Game over!" << endl;
+    }
+
+    // Move to the next player
+    currentPlayerIndex = (currentPlayerIndex + 1) % 4;
+   
+}
+
+void GoFishGame::processPlayerMove(Player& currentPlayer, Player& otherPlayer) {
+    // Process the player's move, check for matches, what have you
+}
+
+bool GoFishGame::checkForMatches(Player& currentPlayer) {
+    // Check if the player has a matching set of cards
+    // If yes, remove those cards and return true, else return false
+}
+
+void GoFishGame::drawCard(Player& currentPlayer) {
+    // Draw a card from the deck and add it to the curernt player's hand
+}
+
+
+
