@@ -5,6 +5,7 @@
 #include "Player.h"
 #include "PlayerProfile.h"
 #include "Deck.h"
+#include "Card.h"
 
 #include <iostream>
 
@@ -12,8 +13,8 @@ using namespace std;
 
 
 int main(){
-    GoFishGame game;
-    game.start();
+    //GoFishGame game;
+    //game.start();
 
 }
 
