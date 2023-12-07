@@ -1,7 +1,6 @@
 #include "Card.h"
 #include <algorithm>
 #include <string>
-#include <iostream>
 
 const std::string suits = "CDHS";
 const std::string ranks = "A23456789TJQK";
