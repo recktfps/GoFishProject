@@ -3,6 +3,7 @@
 #include <cstdlib>
 #include <random>
 #include <vector>
+#include <algorithm>
 
 Deck* Deck::inst = nullptr; // Initializing the static member variable
 
