@@ -2,6 +2,7 @@
 #define ACCOUNT_H
 
 #include "Card.h"
+#include "Deck.h"
 #include <iostream>
 #include <algorithm>
 #include <vector>
@@ -9,8 +10,10 @@
 #include <new>
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>     
-
+#include <time.h>    
+ 
+class Card;
+class Deck;
 class Account{
     public:
     Account(); //Constructor
@@ -22,9 +25,11 @@ class Account{
     void printHand(); //Function to print the cards in hand
     int getCardCount(); //Function to get the number of cards in hand
     Card* getCards(); //Function to get a pointer to the cards in hand
+    Deck* printDeck();
 
     private:
     int numCards; //Amount of cards in hand
     Card *cards; //Pointer to array of card in the hand
+    Deck *GameDeck;
 };
 #endif

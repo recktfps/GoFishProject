@@ -8,7 +8,18 @@
 Deck* Deck::inst = nullptr; //Initializing the static member variable
 
 Deck::Deck() {
-    newDeck(); //Constructor initializes a new deck
+    //newDeck(); //Constructor initializes a new deck
+    Card c;
+    for (char s = 0; s < 4; s++) {
+        for (char r = 0; r < 13; r++) {
+            c.set(s, r); // Create and set each card's suit and rank
+            cards.push_back(c); // Add the card to the deck
+        }
+    }
+    // Shuffle the deck using std::shuffle
+    std::random_device rd;
+    std::mt19937 g(rd()); // Standard mersenne_twister_engine seeded with rd()
+    std::shuffle(cards.begin(), cards.end(), g);
 }
 
 Deck* Deck::instance() {

@@ -7,18 +7,26 @@
 #include "Player.h"
 #include "PlayerProfile.h"
 #include "Deck.h"
+#include "Card.h"
 
 #include <iostream>
 #include <string>
 
+class Account;
+
 class GoFishGame{
     public:
-    GoFishGame();
+    //Will store the amount of games played/started
+    GoFishGame(int GameCount);
+    //Will prompt the user to enter a menu selection
+    //Will ask for amount of players
     void start();
+    int GetGamesPlayed() const;
 
 
     private:
-    Deck deck;
+    int Game;
+    Account* Deck;
     Player players[4]; // Assuming a maximum of 4 players
     int currentPlayerIndex; // Index of the current player
     bool gameOver;

@@ -13,8 +13,10 @@ using namespace std;
 
 
 int main(){
-    //GoFishGame game;
-    //game.start();
-
+    //Will indicate how many games have been started/played
+    int GameStarted = 1;
+    //Then Send into an infinite Loop
+    GoFishGame game(GameStarted);
+    game.start();
 }
 

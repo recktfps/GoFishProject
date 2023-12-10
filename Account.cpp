@@ -1,8 +1,16 @@
 #include "Account.h"
+#include "GoFishGame.h"
+#include "Mode.h"
+#include "PlayByPlay.h"
+#include "Player.h"
+#include "PlayerProfile.h"
+#include "Deck.h"
+#include "Card.h"
 
+class Card;
+class Deck;
 
-
-Account::Account(){ //Constructor for Account which creats a new array of the total amount of cards
+Account::Account(){ //Constructor for Account which creates a new array of the total amount of cards
     numCards = 0;
     cards = new Card[52];
 }
@@ -45,7 +53,7 @@ bool Account::sameRank(int rank){
 
 bool Account::checkSet(int rank){
     int temp = 0;
-    for (int i =0; i< numCards; i++){ //Goes through the hand and counts the ammount of cards of the same rank
+    for (int i =0; i< numCards; i++){ //Goes through the hand and counts the amount of cards of the same rank
         if (cards[i].getRank() == rank){
             temp++;
         }
@@ -72,5 +80,8 @@ Card* Account::getCards(){ //Function that returns cards in the players hand
   return cards;
 }
 
+Deck* Account::printDeck(){//more for testing purpose but need something to print the amount of cards in the Dec
+
+}
 
 
