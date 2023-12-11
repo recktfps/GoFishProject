@@ -20,6 +20,11 @@ string PlayerProfile::getName() const {
     return name;
 }
 
+//Increment games played by 1
+void PlayerProfile::incrementGames() {
+    gamesPlayed++;
+}
+
 //Increment wins by 1
 void PlayerProfile::incrementWins() {
     wins++;
@@ -31,11 +36,11 @@ void PlayerProfile::incrementLosses() {
 }
 
 //Getter for wins
-int PlayerProfile::getWins() const {
-    return wins;
+float PlayerProfile::getWinPercent() const {
+    return (wins/losses);
 }
 
-//Getter for losses
-int PlayerProfile::getLosses() const {
-    return losses;
+//Getter to get toal of games played
+int PlayerProfile::getGamesPlayed() const {
+    return gamesPlayed;
 }

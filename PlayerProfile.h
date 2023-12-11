@@ -21,14 +21,17 @@ class PlayerProfile{
     void setName(const string& playerName); //Setter for player name
     string getName() const; //Getter for player name
 
+    void incrementGames(); //Increment total amount of games played by 1
     void incrementWins(); //Increment wins by 1
     void incrementLosses(); //Increment losses by 1
 
-    int getWins() const; //Getter for wins
-    int getLosses() const; //Getter for losses
+    float getWinPercent() const; //Getter to get win percentage
+    int getGamesPlayed() const; //Getter to get total of games played
 
     private:
     string name;
+    int gamesPlayed;
+    float winPercent;
     int wins;
     int losses;
 };
