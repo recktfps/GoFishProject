@@ -10,7 +10,7 @@
 #include <string>
 
 /*
-PlayByPlay should send every single move to an OutFile. From that OutFile we should be able to show the user a previous game plat by play.
+PlayByPlay should send every single move to an OutFile. From that OutFile we should be able to show the user a previous game play by play.
 */
 
 
