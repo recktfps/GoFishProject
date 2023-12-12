@@ -13,6 +13,7 @@
 #include <string>
 
 class Account;
+class Player;
 
 class GoFishGame{
     public:
@@ -25,8 +26,8 @@ class GoFishGame{
 
 
     private:
-    int Game;
-    Account* Deck;
+    int Game;//Count the amount of games
+    Account* PlayingDeck; //Is where the cards will be stored
     Player players[4]; // Assuming a maximum of 4 players
     int currentPlayerIndex; // Index of the current player
     bool gameOver;

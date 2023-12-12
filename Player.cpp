@@ -21,19 +21,24 @@ So Far the Player Class has the Following Functions
     Will allow us to get the user name and user it for the player profile
 
 */
-
+//class Account;
 
 //default Constructor will be used to create CPU
-
 Player::Player(){
-    Name = "Bot";
-
+//Player::Player(Account c){
+    Name = "bot";
 }
-
-Player::Player(bool IsHuman){
+Player::Player(bool IsHuman,Account* c){
+//Player::Player(bool IsHuman, Account c){
     //WIll prompt the player to provide a name in order to create their player
-    cout << "Please Enter A Name For Your Player: ";
-    cin >> Name;
+    if (IsHuman == true){
+        cout << "Please Enter A Name For Your Player: ";
+        cin >> Name;
+        PlayingCards = c;
+    } else{
+        Name = "bot";
+         PlayingCards = c;
+    }
 
 }
 
@@ -41,6 +46,10 @@ string Player::GetPlayerName() const{
     return Name;
 }
 
+//Need something to show the player their hand
+
+//Need something to allow player to grab cards
+
+
 //Create an object to be able to grab the players hand to show it to the player
 
-//Overload Constructor will be used to create Human Player

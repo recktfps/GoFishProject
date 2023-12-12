@@ -1,10 +1,10 @@
 
 #include "GoFishGame.h"
-#include "Account.h"
 #include "Mode.h"
 #include "PlayByPlay.h"
 #include "Player.h"
 #include "PlayerProfile.h"
+#include "Account.h"
 #include "Deck.h"
 #include "Card.h"
 
@@ -15,7 +15,8 @@
 
 using namespace std;
 
-
+class Account;
+class Player;
 GoFishGame::GoFishGame(int GameCount){
     Game = GameCount;
 }
@@ -31,6 +32,8 @@ void MenuLines();
 void Game2Players(Player& Human, Player& Computer);
 int RandomNumber(int Players);
 
+
+//Should move all the menu, gamemode to the mode file since mode is currently empty.
 void GoFishGame::start(){
     currentPlayerIndex = 0;
     MenuLines();
@@ -50,14 +53,13 @@ void GoFishGame::start(){
     }
     //Will be used for testing purpose
     if(a == "4"){
-        /*
         //Test for player Named Generation
-        Player P1(true, Deck);
-        Player P2(Deck);
+        
+        Account* PlayingDeck;
+        PlayingDeck = new Account();
+        Player P1(true, PlayingDeck);
+        Player P2(false, PlayingDeck);
         Game2Players(P1, P2);
-        //Need to test Card Generation
-        */
-       cout << Deck->getCardCount();
 
     }
 
@@ -126,7 +128,7 @@ bool GoFishGame::checkForMatches(Player& currentPlayer) {
 void GoFishGame::drawCard(Player& currentPlayer) {
     // Draw a card from the deck and add it to the current player's hand
 }
-/*
+
 void Game2Players(Player& Human, Player& Computer){
 
     //Current Deck that will be played with 
@@ -148,11 +150,14 @@ void Game2Players(Player& Human, Player& Computer){
     bool GameFinished = false;
     //Will Start at which ever player was picked first
     int PlayerIndex = PlayerChoice;
-    while(!GameFinished){
-        CurrentDeck.draw();
-    }
+    cout << "Working" << endl;
+    cout << Gamer[0].PlayingCards->getCardCount() << endl;
+    cout << Gamer[1].PlayingCards->getCards() << endl;
+    cout << Gamer[1].PlayingCards->getCardCount() << endl;
+    //while(!GameFinished){
+    //}
 }
-*/
+
 int RandomNumber(int Players){
     srand(static_cast<unsigned int>(time(nullptr)));
     // Generate a random number between 0 and 1

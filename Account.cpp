@@ -1,5 +1,6 @@
-#include "Account.h"
+
 #include "GoFishGame.h"
+#include "Account.h"
 #include "Mode.h"
 #include "PlayByPlay.h"
 #include "Player.h"
@@ -12,7 +13,9 @@ class Deck;
 
 Account::Account(){ //Constructor for Account which creates a new array of the total amount of cards
     numCards = 0;
+    numCards = 52;
     cards = new Card[52];
+    cout << "This is printing the cards pointer" << *cards << endl;
 }
 
 
@@ -46,9 +49,10 @@ Card Account::removeCard(int rank){
 bool Account::sameRank(int rank){
     for (int i =0; i<numCards; i++){
         if (cards[i].getRank() == rank){
-            return true;
+            //return true;
         }
     }
+    return false;
 }
 
 bool Account::checkSet(int rank){
@@ -76,12 +80,12 @@ int Account::getCardCount(){ //Outputs int of total cards in hand
     return numCards;
 }
 
-Card* Account::getCards(){ //Function that returns cards in the players hand
-  return cards;
+Card Account::getCards(){ //Function that returns cards in the players hand
+    return *cards;
 }
 
 Deck* Account::printDeck(){//more for testing purpose but need something to print the amount of cards in the Dec
-
+    return GameDeck->instance();
 }
 
 

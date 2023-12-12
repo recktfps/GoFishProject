@@ -11,22 +11,32 @@
 
 #include <iostream>
 #include <string>
+
+class Account;
+
 class Player{
     public:
+    Account* PlayingCards;
     //default Constructor will be used to create CPU
-    Player(); 
+    Player();
+
+    //Player(Account c); 
     //Overload Constructor will be used to create Human Player
     //Will Prompt the user to provide a name
-    Player(bool IsHuman);
+    Player(bool IsHuman,Account* c);
+    //Player(bool IsHuman, Account c);
     //Will ask the user to pick a card
     //void PlayerCardSelection();
-    string GetPlayerName() const;
+    std::string GetPlayerName() const;
+
+    //std::string Get
 
     private:
     //Deck PlayersHand;
     //Account GameDeck;
     //Will hold the name of the player to then use for PlayerProfile
-    string Name;
+    std::string Name;
+    //Account* PlayingCards;
     //Create a function to prompt the user for a card
 
 

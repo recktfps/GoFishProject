@@ -24,7 +24,7 @@ class Account{
     bool checkSet(int rank); //Function to check if a set (four cards of the same rank) exists
     void printHand(); //Function to print the cards in hand
     int getCardCount(); //Function to get the number of cards in hand
-    Card* getCards(); //Function to get a pointer to the cards in hand
+    Card getCards(); //Function to get a pointer to the cards in hand
     Deck* printDeck();
 
     private:
