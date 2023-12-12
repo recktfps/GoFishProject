@@ -36,6 +36,7 @@ class Player{
     //Account GameDeck;
     //Will hold the name of the player to then use for PlayerProfile
     std::string Name;
+    int books;
     //Account* PlayingCards;
     //Create a function to prompt the user for a card
 

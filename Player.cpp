@@ -35,9 +35,11 @@ Player::Player(bool IsHuman,Account* c){
         cout << "Please Enter A Name For Your Player: ";
         cin >> Name;
         PlayingCards = c;
+        books = 0;
     } else{
         Name = "bot";
-         PlayingCards = c;
+        PlayingCards = c;
+        books = 0;
     }
 
 }
@@ -45,6 +47,8 @@ Player::Player(bool IsHuman,Account* c){
 string Player::GetPlayerName() const{
     return Name;
 }
+
+
 
 //Need something to show the player their hand
 

@@ -13,9 +13,7 @@ class Deck;
 
 Account::Account(){ //Constructor for Account which creates a new array of the total amount of cards
     numCards = 0;
-    numCards = 52;
     cards = new Card[52];
-    cout << "This is printing the cards pointer" << *cards << endl;
 }
 
 
@@ -71,7 +69,7 @@ bool Account::checkSet(int rank){
 }
 
 void Account:: printHand(){
-    for (int i =0; i<numCards; i++){ //Goes through every card in hand and prints rank/suit of each card
+    for (int i = 0; i < numCards; i++){ //Goes through every card in hand and prints rank/suit of each card
         std::cout << cards[i].getRank() << cards[i].getSuit() << std::endl;
     }
 }
@@ -89,3 +87,6 @@ Deck* Account::printDeck(){//more for testing purpose but need something to prin
 }
 
 
+void Account::IncrementHand(int increment){
+    numCards = increment + numCards;
+}

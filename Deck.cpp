@@ -46,6 +46,8 @@ Card Deck::draw() {
     return c;
 }
 
+
+
 void Deck::newDeck() {
     Card c;
     for (char s = 0; s < 4; s++) {

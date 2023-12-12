@@ -151,9 +151,11 @@ void Game2Players(Player& Human, Player& Computer){
     //Will Start at which ever player was picked first
     int PlayerIndex = PlayerChoice;
     cout << "Working" << endl;
-    cout << Gamer[0].PlayingCards->getCardCount() << endl;
-    cout << Gamer[1].PlayingCards->getCards() << endl;
-    cout << Gamer[1].PlayingCards->getCardCount() << endl;
+    Gamer[0].PlayingCards->addCard(Gamer[0].PlayingCards->printDeck()->draw());
+    Gamer[0].PlayingCards->addCard(Gamer[0].PlayingCards->printDeck()->draw());
+    Gamer[0].PlayingCards->addCard(Gamer[0].PlayingCards->printDeck()->draw());
+    Gamer[0].PlayingCards->addCard(Gamer[0].PlayingCards->printDeck()->draw());
+    Gamer[0].PlayingCards->printHand();
     //while(!GameFinished){
     //}
 }

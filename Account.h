@@ -22,6 +22,7 @@ class Account{
     Card removeCard(int rank); //Function to remove a card from the account
     bool sameRank(int rank); //Function to check if there are cards of the same rank in the account
     bool checkSet(int rank); //Function to check if a set (four cards of the same rank) exists
+    void IncrementHand(int increment);
     void printHand(); //Function to print the cards in hand
     int getCardCount(); //Function to get the number of cards in hand
     Card getCards(); //Function to get a pointer to the cards in hand
