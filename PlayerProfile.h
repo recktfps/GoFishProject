@@ -25,8 +25,13 @@ class PlayerProfile{
     void incrementWins(); //Increment wins by 1
     void incrementLosses(); //Increment losses by 1
 
+    void setBet(int insertBet); //set users bet and take it out of their balance
+    void payoutBet(int bet, int completedSets); //Multiply bet * completed sets and add it to the players balance
+
+
     float getWinPercent() const; //Getter to get win percentage
     int getGamesPlayed() const; //Getter to get total of games played
+
 
     private:
     string name;
@@ -34,5 +39,8 @@ class PlayerProfile{
     float winPercent;
     int wins;
     int losses;
+    int balance;
+    int bet;
+    int completedSets;
 };
 #endif

@@ -35,6 +35,17 @@ void PlayerProfile::incrementLosses() {
     losses++;
 }
 
+//Take bet and subtract it from the players balance
+void PlayerProfile::setBet(int insertBet){
+    balance = (balance - insertBet);
+    bet = insertBet;
+}
+
+//
+void PlayerProfile::payoutBet(int bet, int completedSets){
+    balance = balance + (bet * completedSets);
+}
+
 //Getter for wins
 float PlayerProfile::getWinPercent() const {
     return (wins/losses);
