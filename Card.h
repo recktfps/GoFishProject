@@ -1,14 +1,6 @@
 #ifndef CARD_H
 #define CARD_H
 
-#include "Account.h"
-#include "GoFishGame.h"
-#include "Mode.h"
-#include "PlayByPlay.h"
-#include "PlayerProfile.h"
-#include "Deck.h"
-#include "Card.h"
-
 #include <iostream>
 
 class Card {

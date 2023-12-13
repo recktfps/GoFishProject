@@ -1,15 +1,10 @@
 #include "Deck.h"
-#include <ctime>
-#include <cstdlib>
-#include <random>
-#include <vector>
-#include <algorithm>
 
 Deck* Deck::inst = nullptr; //Initializing the static member variable
 
 Deck::Deck() {
     newDeck(); //Constructor initializes a new deck
-    /*
+    
     Card c;
     for (char s = 0; s < 4; s++) {
         for (char r = 0; r < 13; r++) {
@@ -17,11 +12,6 @@ Deck::Deck() {
             cards.push_back(c); // Add the card to the deck
         }
     }
-    // Shuffle the deck using std::shuffle
-    std::random_device rd;
-    std::mt19937 g(rd()); // Standard mersenne_twister_engine seeded with rd()
-    std::shuffle(cards.begin(), cards.end(), g);
-    */
 }
 
 Deck* Deck::instance() {
@@ -46,7 +36,16 @@ Card Deck::draw() {
     return c;
 }
 
-
+void Deck::shuffleDeck(){
+    srand(time(NULL));
+    for (int i =0; i < 500; i++){ //using rand() function we are changing two random cards position 500 times to shuffle the deck
+        int cardFirst = rand() % 52;
+        int cardSecond = rand() & 52;
+        Card cardTemp = cards[cardFirst];
+        cards[cardFirst] = cards[cardSecond];
+        cards[cardSecond] = cardTemp;
+    }
+}
 
 void Deck::newDeck() {
     Card c;
@@ -56,9 +55,5 @@ void Deck::newDeck() {
             cards.push_back(c); // Add the card to the deck
         }
     }
-    // Shuffle the deck using std::shuffle
-    std::random_device rd;
-    std::mt19937 g(rd()); // Standard mersenne_twister_engine seeded with rd()
-    std::shuffle(cards.begin(), cards.end(), g);
 }
 
