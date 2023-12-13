@@ -48,7 +48,13 @@ string Player::GetPlayerName() const{
     return Name;
 }
 
+int Player::GetNumberBooks() const{
+    return books;
+}
 
+int Player::SetNumberBooks(){
+    books++;
+}
 
 //Need something to show the player their hand
 

@@ -1,13 +1,14 @@
 #ifndef DECK_H
 #define DECK_H
 
+#include "Account.h"
+#include "GoFishGame.h"
+#include "Mode.h"
+#include "PlayByPlay.h"
+#include "PlayerProfile.h"
+#include "Deck.h"
 #include "Card.h"
 #include <vector>
-#include <iostream>
-#include <cstdlib>
-#include <ctime>
-#include <algorithm>
-#include <random>
 
 //Was required since the class has to be forward-declared before the deck class. Allows for implementation in the Deck class
 class Card;
@@ -17,8 +18,8 @@ public:
     static Deck* instance(); //Function to get the instance of the deck
     void destroy(); //Function to delete the instance of the deck
     Card draw(); //Function to draw a card from the deck
-    void shuffleDeck(); //Function to shuffle the Deck
     Deck(); //Constructor for the deck
+    void shuffleDeck();
 private:
     //Deck(); //Constructor for the deck
     void newDeck(); //Function to create a new deck

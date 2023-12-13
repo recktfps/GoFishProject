@@ -28,7 +28,8 @@ class Player{
     //Will ask the user to pick a card
     //void PlayerCardSelection();
     std::string GetPlayerName() const;
-
+    int GetNumberBooks() const;
+    int SetNumberBooks();
     //std::string Get
 
     private:
