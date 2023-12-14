@@ -55,11 +55,12 @@ void GoFishGame::start(){
         cout << "Beginning A Human vs Computer match " << endl;
         //Human Player Generation
         Account* PlayingDeck;
+        PlayerProfile* stats;
         PlayingDeck = new Account();
         //Player 1 is a human
-        Player Player1(true, PlayingDeck);
+        Player Player1(true, PlayingDeck, stats);
         //Player 2 is a bot
-        Player Player2(false, PlayingDeck);
+        Player Player2(false, PlayingDeck, stats);
 
         //Sending to Function to do Game Logix
         TwoPlayerGoFish(Player1, Player2);
@@ -78,11 +79,11 @@ void GoFishGame::start(){
         //Test for player Named Generation
         
         Account* PlayingDeck;
+        PlayerProfile* stats;
         PlayingDeck = new Account();
-        Player P1(true, PlayingDeck);
-        Player P2(false, PlayingDeck);
+        Player P1(true, PlayingDeck, stats);
+        Player P2(false, PlayingDeck, stats);
         Game2Players(P1, P2);
-
     }
 
 
@@ -91,8 +92,6 @@ void GoFishGame::start(){
 
 }
 
-//Logic for 2 players playing Go Fish
-//Human vs bot
 
 int TwoPlayerGoFish(Player& Human, Player& Bot){
     Player Gamer[2] = {Human, Bot};

@@ -13,17 +13,19 @@
 #include <string>
 
 class Account;
+class PlayerProfile;
 
 class Player{
     public:
     Account* PlayingCards;
+    PlayerProfile* stats;
     //default Constructor will be used to create CPU
     Player();
 
     //Player(Account c); 
     //Overload Constructor will be used to create Human Player
     //Will Prompt the user to provide a name
-    Player(bool IsHuman,Account* c);
+    Player(bool IsHuman,Account* c, PlayerProfile* p);
     //Player(bool IsHuman, Account c);
     //Will ask the user to pick a card
     //void PlayerCardSelection();

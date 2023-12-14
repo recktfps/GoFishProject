@@ -21,24 +21,25 @@ So Far the Player Class has the Following Functions
     Will allow us to get the user name and user it for the player profile
 
 */
-//class Account;
 
 //default Constructor will be used to create CPU
 Player::Player(){
 //Player::Player(Account c){
     Name = "bot";
 }
-Player::Player(bool IsHuman,Account* c){
+Player::Player(bool IsHuman,Account* c,PlayerProfile* p){
 //Player::Player(bool IsHuman, Account c){
     //WIll prompt the player to provide a name in order to create their player
     if (IsHuman == true){
         cout << "Please Enter A Name For Your Player: ";
         cin >> Name;
         PlayingCards = c;
+        stats = p;
         books = 0;
     } else{
         Name = "bot";
         PlayingCards = c;
+        stats = p;
         books = 0;
     }
 
