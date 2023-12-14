@@ -242,6 +242,10 @@ int TwoPlayerGoFish(Player& Human, Player& Bot, Player& referencedPlayer){
     }
     int books = Gamer[0].PlayingCards->CheckForBooks(1);
     referencedPlayer.stats->payoutBet(bet,books);
+    cout << "Game won after paying out the bet your new balance is "<< referencedPlayer.stats->getBalance() << endl;
+    referencedPlayer.stats->incrementWins();
+    cout << "Your total games played is " << referencedPlayer.stats->getGamesPlayed() << endl;
+    cout << "Your win percentage is " << referencedPlayer.stats->getWinPercent() << endl;
     //Return a 1 to indicate that the game is over
     return 1;
 }
