@@ -27,8 +27,8 @@ class PlayerProfile{
 
     void setBet(int insertBet); //set users bet and take it out of their balance
     void payoutBet(int bet, int completedSets); //Multiply bet * completed sets and add it to the players balance
-
-
+    
+    int getBalance(); //Getter for player balance
     float getWinPercent() const; //Getter to get win percentage
     int getGamesPlayed() const; //Getter to get total of games played
 

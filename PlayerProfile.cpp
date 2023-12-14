@@ -46,6 +46,10 @@ void PlayerProfile::payoutBet(int bet, int completedSets){
     balance = balance + (bet * completedSets);
 }
 
+int PlayerProfile::getBalance(){
+    return balance;
+}
+
 //Getter for wins
 float PlayerProfile::getWinPercent() const {
     return (wins/losses);

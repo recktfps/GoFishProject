@@ -17,6 +17,7 @@ using namespace std;
 
 class Account;
 class Player;
+class PlayerProfile;
 GoFishGame::GoFishGame(int GameCount){
     Game = GameCount;
 }
@@ -27,6 +28,8 @@ int GoFishGame::GetGamesPlayed() const{
 //Function prototypes
 string MenuChoice();
 void menu();
+void betMenu();
+void statsMenu();
 bool ValidMenu(string i);
 void MenuLines();
 void Game2Players(Player& Human, Player& Computer);
@@ -39,17 +42,18 @@ void PrintPlayerHand(Player currentPlayer, int PlayerPosition);
 
 
 //Prototypes for 2 player
-int TwoPlayerGoFish(Player& Human, Player& Bot);
+int TwoPlayerGoFish(Player& Human, Player& Bot, Player& referencedPlayer);
 void DealStartingCards(Player currentplayer, int amount, int PlayerPosition);
 int ShowCardCount(Player currentplayer, int PlayerPosition);
 bool CompareCards(Player currentplayer, string CurrentPlayerCard, Player otherplayer, int PlayerPosition, int BotOrHuman);
-
+int bet = 0;
 
 //Should move all the menu, gamemode to the mode file since mode is currently empty.
 void GoFishGame::start(){
     currentPlayerIndex = 0;
     MenuLines();
     string a = MenuChoice();
+    
     //change mode to Human vs Computer
     if(a == "1"){
         cout << "Beginning A Human vs Computer match " << endl;
@@ -59,11 +63,22 @@ void GoFishGame::start(){
         PlayingDeck = new Account();
         //Player 1 is a human
         Player Player1(true, PlayingDeck, stats);
+        Player* Player1stats = new Player(true, PlayingDeck, stats);
         //Player 2 is a bot
         Player Player2(false, PlayingDeck, stats);
+        //asking for bets
+        int humanBalance = Player1stats->stats->getBalance();
+        cout << "Your Balance is "<<humanBalance<<endl;
+        cout <<"How much would you like to bet?"<<endl;
+        int userBet = 0;
+        cin>> userBet;
+        bet = userBet;
+        Player1stats->stats->setBet(userBet);
 
-        //Sending to Function to do Game Logix
-        TwoPlayerGoFish(Player1, Player2);
+
+        //Sending to Function to do Game Logic
+        Player& referencePlayer = *Player1stats;
+        TwoPlayerGoFish(Player1, Player2,referencePlayer);
 
     }
     //change mode to Human vs Computer vs Computer
@@ -93,7 +108,7 @@ void GoFishGame::start(){
 }
 
 
-int TwoPlayerGoFish(Player& Human, Player& Bot){
+int TwoPlayerGoFish(Player& Human, Player& Bot, Player& referencedPlayer){
     Player Gamer[2] = {Human, Bot};
 
     //Random Number Generation in order to see who goes first
@@ -225,6 +240,8 @@ int TwoPlayerGoFish(Player& Human, Player& Bot){
     }else{
         cout << Gamer[1].GetPlayerName() << " has won this game of GoFish, thank you for playing!" << endl;
     }
+    int books = Gamer[0].PlayingCards->CheckForBooks(1);
+    referencedPlayer.stats->payoutBet(bet,books);
     //Return a 1 to indicate that the game is over
     return 1;
 }
@@ -300,6 +317,8 @@ void menu(){
     cout << "4. Testing" << endl;
     cout << "Enter : ";
 }
+
+
 //Returns true if the user does a valid input
 bool ValidMenu(string i){
     return i == "1" || i == "2" || i == "3" || i == "4" || i == "5";
