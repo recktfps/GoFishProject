@@ -16,12 +16,11 @@ class Mode{
     public:
     Mode();
     string GameMode;
-
+    void assignGameMode(int selection); //Function to select the game mode before starting the game
 
     private:
-
-
-
-
+    string TwoPlayerGoFish;
+    string ThreePlayerGoFish;
+    string FourPlayerGoFish;
 };
 #endif
