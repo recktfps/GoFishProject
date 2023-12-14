@@ -61,6 +61,7 @@ void GoFishGame::start(){
         Account* PlayingDeck;
         PlayerProfile* stats;
         PlayingDeck = new Account();
+        stats = new PlayerProfile();
         //Player 1 is a human
         Player Player1(true, PlayingDeck, stats);
         Player* Player1stats = new Player(true, PlayingDeck, stats);
@@ -318,7 +319,7 @@ void menu(){
     cout << "1. Human vs Computer" << endl;
     cout << "2. Human vs Computer vs Computer" << endl;
     cout << "3. Human vs Computer vs Computer vs Computer" << endl;
-    cout << "4. Testing" << endl;
+    cout << "4. Human vs Computer vs Computer vs Computer vs Computer" << endl;
     cout << "Enter : ";
 }
 

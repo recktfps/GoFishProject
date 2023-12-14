@@ -5,10 +5,10 @@
 #include <string>
 
 //Default Constructor with empty name and 0 wins&losses
-PlayerProfile::PlayerProfile() : name(""), wins(0), losses(0) {}
+PlayerProfile::PlayerProfile() : name(""), wins(0), losses(0), balance(100) {}
 
 //Constructor for PlayerProfile with player's name
-PlayerProfile::PlayerProfile(const string& Name) : name(Name), wins(0), losses(0) {}
+PlayerProfile::PlayerProfile(const string& Name) : name(Name), wins(0), losses(0), balance(100) {}
 
 //Setter for the player's name
 void PlayerProfile::setName(const string& Name) {
